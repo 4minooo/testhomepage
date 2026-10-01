@@ -1,0 +1,13 @@
+{
+  "name": "test-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "check": "node --check public/app.js && node --check public/content.js && npm test && npm run build"
+  },
+  "engines": { "node": ">=20" }
+}

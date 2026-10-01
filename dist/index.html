@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="오늘의 날씨와 마음에 남는 한 문장. TEST 홈페이지에서 가볍게 하루를 시작하세요.">
+  <meta name="theme-color" content="#ffffff">
+  <title>TEST 홈페이지</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 이동</a>
+  <aside class="sidebar">
+    <a class="brand" href="#main" aria-label="TEST 홈페이지 홈"><span class="brand-mark">T<span></span></span><span>TEST<span class="brand-sub">홈페이지</span></span></a>
+    <p class="nav-label">오늘의 공간</p>
+    <nav aria-label="콘텐츠">
+      <a class="nav-link" href="#weather"><span aria-hidden="true">☀</span>오늘의 날씨</a>
+      <a class="nav-link" href="#quote"><span class="quote-icon" aria-hidden="true">“</span>랜덤 명언</a>
+    </nav>
+    <div class="sidebar-bottom"><span class="mini-mark">T</span><div>작은 일상의 발견<span>날씨, 그리고 한 문장.</span></div></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span>TEST 홈페이지 <span class="header-divider">/</span> <span class="header-muted">오늘</span></span><time id="header-date"></time></header>
+    <main id="main" tabindex="-1">
+      <div class="intro"><span class="eyebrow">YOUR DAILY MOMENT</span><h1>오늘도, 좋은 하루.</h1><p>지금의 날씨와 오늘을 채워 줄 한 문장.</p></div>
+      <section class="card weather-card" id="weather" aria-labelledby="weather-heading" aria-busy="true">
+        <div class="card-heading"><div class="section-title"><span class="small-icon" aria-hidden="true">☀</span><h2 id="weather-heading">오늘의 날씨</h2></div><button class="icon-button" id="refresh-weather" aria-label="날씨 새로고침" title="날씨 새로고침">↻</button></div>
+        <div class="weather-controls"><label class="sr-only" for="city">날씨를 볼 도시</label><select id="city"><option value="seoul">서울</option><option value="busan">부산</option><option value="incheon">인천</option><option value="daegu">대구</option><option value="daejeon">대전</option><option value="gwangju">광주</option><option value="jeju">제주</option></select><button class="text-button" id="my-location"><span aria-hidden="true">⌖</span> 내 위치</button></div>
+        <div id="weather-result" aria-live="polite" aria-atomic="true"><div class="weather-loading">오늘의 날씨를 불러오는 중입니다…</div></div>
+        <div class="card-footer weather-footer"><span id="weather-updated">현재 날씨 · 오늘의 예보</span><a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo 제공</a></div>
+      </section>
+      <section class="card quote-card" id="quote" aria-labelledby="quote-heading">
+        <div class="card-heading"><div class="section-title"><span class="small-icon" aria-hidden="true">“</span><h2 id="quote-heading">랜덤 명언</h2></div><span class="pill">생각의 여백</span></div>
+        <div class="quote-content" aria-live="polite" aria-atomic="true"><span class="large-quote" aria-hidden="true">“</span><blockquote id="quote-text"></blockquote><p class="quote-author" id="quote-author"></p></div>
+        <div class="card-footer"><span class="quote-note">고전의 문장을 한국어로 의역했습니다.</span><button class="primary-button" id="new-quote"><span aria-hidden="true">↻</span> 다른 명언 보기</button></div>
+      </section>
+      <footer class="page-footer">TEST 홈페이지<span>매일, 조금 더 가볍게.</span></footer>
+      <noscript><p>날씨와 랜덤 명언을 보려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
+    </main>
+  </div>
+</body>
+</html>
